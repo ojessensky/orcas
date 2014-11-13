@@ -3,7 +3,7 @@ CREATE OR REPLACE package body pa_orcas_exec_log is
 procedure log_exec_stmt(pi_stmt in varchar2)
 is
   v_stmt varchar2(32000);
-  c_max_line_length number := 2000;  
+  c_max_line_length number := 32000;  
   v_last_space_index number(10);
   
   procedure write_to_table

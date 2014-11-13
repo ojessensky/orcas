@@ -369,7 +369,7 @@ function create_check_def_data_stmt( p_metadata in ot_data_metadata ) return var
 function create_check_def_data_stmt( p_metadata in ot_data_metadata ) return varchar2
 is
   v_statement varchar2(32000);
-  v_table_select varchar2(2000);
+  v_table_select varchar2(32000);
 begin
   v_table_select := 'select to_char(';
   
@@ -444,7 +444,7 @@ procedure do_merge( p_metadata in ot_data_metadata )
 is
   type t_refcursor     is ref cursor;
   cur_statements_data  t_refcursor;  
-  v_statement          varchar2(2000);      
+  v_statement          varchar2(32000);      
   v_data_statement     varchar2(32000);        
   v_rows               ct_data_rdl;
 begin
@@ -600,9 +600,9 @@ procedure do_check_only
 is
   type t_refcursor     is ref cursor;
   cur_def_diff_data    t_refcursor;
-  v_def_diff_key       varchar2(2000);
-  v_def_diff_def_data  varchar2(2000);  
-  v_def_diff_cur_data  varchar2(2000);    
+  v_def_diff_key       varchar2(32000);
+  v_def_diff_def_data  varchar2(32000);  
+  v_def_diff_cur_data  varchar2(32000);    
   v_first              number := 1;
   v_metadata           ot_data_metadata;
   v_rows               ct_data_rdl;
@@ -663,7 +663,7 @@ begin
   pa_orcas_exec_log.log_exec_stmt( 'SET FEEDBACK        OFF' );            
   pa_orcas_exec_log.log_exec_stmt( 'SET HEADING            OFF' );            
   pa_orcas_exec_log.log_exec_stmt( 'SET ESCAPE            ON' );            
-  pa_orcas_exec_log.log_exec_stmt( 'SET LINESIZE         2000;' );            
+  pa_orcas_exec_log.log_exec_stmt( 'SET LINESIZE        32000;' );            
   pa_orcas_exec_log.log_exec_stmt( 'SET PAGESIZE        9999;' );            
   pa_orcas_exec_log.log_exec_stmt( 'SET trimspool on' );            
   pa_orcas_exec_log.log_exec_stmt( 'set long 1000000000 longc 60000' );              

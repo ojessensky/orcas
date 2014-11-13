@@ -719,7 +719,7 @@ ${orcas_sql_output}
           </if>
         </then>
         <else>
-          <orcas_internal_sql_plus loglevel="warning" script="${orcas_util_scripts}/select_tablescript_from_db.sql" user="@{user}" password="@{password}" tnsname="@{tnsname}" tmpfolder="@{tmpfolder}" />
+          <orcas_internal_sql_plus loglevel="warning" script="${orcas_util_scripts}/select_tablescript_from_db.sql" user="@{user}" password="@{password}" tnsname="@{tnsname}" tmpfolder="@{tmpfolder}"/>
         </else>
       </if>
       <var name="orcas_internal_logging_active" unset="true" />

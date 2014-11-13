@@ -1,14 +1,14 @@
 
 create or replace type ot_data_cd as object
 (
-  i_cell_value varchar2(2000)
+  i_cell_value varchar2(32000)
 )
 /
 
 create or replace type ct_data_cdl is table of ot_data_cd
 /
 
-create or replace type ct_data_vc2 is table of varchar2(2000)
+create or replace type ct_data_vc2 is table of varchar2(32000)
 /
 
 create or replace type ot_data_rd as object
